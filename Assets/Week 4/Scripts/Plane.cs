@@ -6,21 +6,30 @@ using UnityEngine;
 public class Plane : MonoBehaviour
 {
     public List<Vector2> points;
+    public List<Sprite> sprites;
     public float threshold = 0.2f;
     Vector2 lastPosition;
     LineRenderer lineRenderer;
     Rigidbody2D rigidbody;
     Vector2 currentPosition;
-    public float speed = 1f;
+    float speed = 1f;
     public AnimationCurve landing;
     float timerValue;
+    SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, transform.position);
+
+        Vector3 spawnPoint = new Vector3(Random.Range(-5f,5f),Random.Range(-5f,5f),0);
+        transform.position = spawnPoint;
+        transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 359f));
+        speed = Random.Range(1f, 3f);
+        spriteRenderer.sprite = sprites[Random.Range(0, 4)];
     }
 
     private void FixedUpdate()
