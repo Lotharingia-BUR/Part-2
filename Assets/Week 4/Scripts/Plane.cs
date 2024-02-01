@@ -6,16 +6,51 @@ using UnityEngine;
 public class Plane : MonoBehaviour
 {
     public List<Vector2> points;
-    public float threshold = 0.2f;
+    public float threshold = 0.4f;
     Vector2 lastPosition;
     LineRenderer lineRenderer;
+    Rigidbody2D rigidbody;
+    Vector2 currentPosition;
+    public float speed = 1f;
 
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        rigidbody = GetComponent<Rigidbody2D>();
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, transform.position);
     }
+
+    private void FixedUpdate()
+    {
+        currentPosition = transform.position;
+        if(points.Count > 0) 
+        {
+            Vector2 direction = points[0] - currentPosition;
+            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+            rigidbody.rotation = -angle;
+        }
+        rigidbody.MovePosition(rigidbody.position + (Vector2)transform.up * speed * Time.deltaTime);
+    }
+
+    private void Update()
+    {
+        lineRenderer.SetPosition(0, transform.position);
+        if (points.Count > 0) 
+        {
+            if (Vector2.Distance(currentPosition, points[0]) > threshold)
+            {
+                points.RemoveAt(0);
+
+                for(int i = 0; i<lineRenderer.positionCount - 2; i++) 
+                {
+                    lineRenderer.SetPosition(i, lineRenderer.GetPosition(i + 1));
+                }
+                lineRenderer.positionCount--;
+            }
+        }
+    }
+
 
     private void OnMouseDown()
     {
