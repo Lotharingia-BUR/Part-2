@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d146ca6144171a498ab04cd1e485fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  spawnTimer: 0
   spawnTime: 3
   plane: {fileID: 6254710051575645196, guid: 85d770aee2a1d6c43a9ad1c015ad0dcd, type: 3}
 --- !u!1 &519420028

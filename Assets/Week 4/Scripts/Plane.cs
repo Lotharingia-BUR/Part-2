@@ -91,4 +91,24 @@ public class Plane : MonoBehaviour
             lastPosition = newPosition;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        spriteRenderer.color = Color.red;
+        if (Vector3.Distance(currentPosition, collision.gameObject.transform.position) < 0.6f)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        spriteRenderer.color = Color.white;
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
