@@ -6,12 +6,14 @@ using UnityEngine;
 public class Plane : MonoBehaviour
 {
     public List<Vector2> points;
-    public float threshold = 0.4f;
+    public float threshold = 0.2f;
     Vector2 lastPosition;
     LineRenderer lineRenderer;
     Rigidbody2D rigidbody;
     Vector2 currentPosition;
     public float speed = 1f;
+    public AnimationCurve landing;
+    float timerValue;
 
     private void Start()
     {
@@ -35,10 +37,20 @@ public class Plane : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKey(KeyCode.Space))
+        {
+            timerValue += 0.5f * Time.deltaTime;
+            float interpolation = landing.Evaluate(timerValue);
+            if(transform.localScale.z < 0.1f) 
+            {
+                Destroy(gameObject);
+            }
+            transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, interpolation);
+        }
         lineRenderer.SetPosition(0, transform.position);
         if (points.Count > 0) 
         {
-            if (Vector2.Distance(currentPosition, points[0]) > threshold)
+            if (Vector2.Distance(currentPosition, points[0]) < threshold)
             {
                 points.RemoveAt(0);
 
