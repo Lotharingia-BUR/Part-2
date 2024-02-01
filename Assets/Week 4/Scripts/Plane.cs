@@ -16,6 +16,8 @@ public class Plane : MonoBehaviour
     public AnimationCurve landing;
     float timerValue;
     SpriteRenderer spriteRenderer;
+    bool land = false;
+    public int score = 0;
 
     private void Start()
     {
@@ -46,16 +48,19 @@ public class Plane : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(land)
         {
+            speed = 0.5f;
             timerValue += 0.5f * Time.deltaTime;
             float interpolation = landing.Evaluate(timerValue);
-            if(transform.localScale.z < 0.1f) 
+            if(transform.localScale.z < 0.2f) 
             {
                 Destroy(gameObject);
+                score += 1;
             }
             transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, interpolation);
         }
+
         lineRenderer.SetPosition(0, transform.position);
         if (points.Count > 0) 
         {
@@ -94,21 +99,46 @@ public class Plane : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        spriteRenderer.color = Color.red;
-        if (Vector3.Distance(currentPosition, collision.gameObject.transform.position) < 0.6f)
+        if (collision.gameObject.name == "Runway")
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (collision.OverlapPoint(currentPosition))
+            {
+                land = true;
+            }
+        }
+        else
+        {
+            spriteRenderer.color = Color.red;
+            if (Vector3.Distance(currentPosition, collision.gameObject.transform.position) < 0.6f)
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        spriteRenderer.color = Color.white;
+        if (collision.gameObject.name == "Runway")
+        {
+            land = true;
+        } else
+        {
+            spriteRenderer.color = Color.white;
+        }  
     }
 
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        land = true;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        land = false;
     }
 }
