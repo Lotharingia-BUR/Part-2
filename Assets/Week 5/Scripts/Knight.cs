@@ -37,6 +37,6 @@ public class Knight : MonoBehaviour
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        animator.SetFloat("movement", movement.magnitude);
+        animator.SetFloat("movment", movement.magnitude);
     }
 }
