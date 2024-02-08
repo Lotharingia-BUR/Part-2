@@ -76,4 +76,6 @@ public class Knight : MonoBehaviour
             animator.SetTrigger("TakeDamage");
         }
     }
+
+
 }
