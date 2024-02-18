@@ -10,11 +10,12 @@ public class Container : MonoBehaviour
     {
         cb = GetComponent<Collider2D>();
     }
-    public void Grab(Collider2D playerPos)
+    public void Grab(Collider2D playerPos, GameObject player)
     {
         if (cb.IsTouching(playerPos))
         {
             Debug.Log("selected" + ingrediantID);
+            player.SendMessage("Grabbed", ingrediantID);
         } else
         {
             Debug.Log("blank");

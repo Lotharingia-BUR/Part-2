@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //game objects
+    //game objects and lists
     public GameObject ingrediants;
+    public GameObject hand;
+    public List<Sprite> images;
 
     //initiate components
     Rigidbody2D rb;
     Collider2D cb;
     Animator am;
+    SpriteRenderer handObj;
 
     //vector 2's
     Vector2 targetPosition;
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cb = GetComponent<Collider2D>();
         am = rb.GetComponent<Animator>();
+        handObj = hand.GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -50,5 +54,10 @@ public class Player : MonoBehaviour
         {
             ingrediants.BroadcastMessage("Grab", cb);
         }
+    }
+
+    void grabbed(int ID)
+    {
+        handObj.sprite = images[ID];
     }
 }
