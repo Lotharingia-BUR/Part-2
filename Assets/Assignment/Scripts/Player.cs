@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //game objects
+    public GameObject ingrediants;
+
     //initiate components
     Rigidbody2D rb;
+    Collider2D cb;
     Animator am;
 
     //vector 2's
     Vector2 targetPosition;
     Vector2 movement;
+
     //public variables
     public float speed = 1;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        cb = GetComponent<Collider2D>();
         am = rb.GetComponent<Animator>();
     }
 
@@ -42,12 +48,7 @@ public class Player : MonoBehaviour
 
         } else if (Input.GetMouseButtonDown(1))
         {
-            SendMessage("Grab");
+            ingrediants.BroadcastMessage("Grab", cb);
         }
-    }
-
-    public void Grab()
-    {
-        Debug.Log("Grabbed");
     }
 }
