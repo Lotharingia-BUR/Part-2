@@ -52,11 +52,11 @@ public class Player : MonoBehaviour
 
         } else if (Input.GetMouseButtonDown(1))
         {
-            ingrediants.BroadcastMessage("Grab", cb);
+            ingrediants.BroadcastMessage("Grab", gameObject);
         }
     }
 
-    void grabbed(int ID)
+    public void Grabbed(int ID)
     {
         handObj.sprite = images[ID];
     }
