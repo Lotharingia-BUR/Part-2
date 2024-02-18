@@ -39,9 +39,15 @@ public class Player : MonoBehaviour
         {
             //get point clicked
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         } else if (Input.GetMouseButtonDown(1))
         {
             SendMessage("Grab");
         }
+    }
+
+    public void Grab()
+    {
+        Debug.Log("Grabbed");
     }
 }

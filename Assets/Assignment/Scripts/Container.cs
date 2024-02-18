@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Container : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float ingrediantID = 0;
 
-    // Update is called once per frame
-    void Update()
+    public void Grab()
     {
-        
+        Debug.Log("selected" + ingrediantID);
     }
 }
