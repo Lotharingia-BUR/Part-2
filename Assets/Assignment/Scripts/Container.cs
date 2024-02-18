@@ -14,17 +14,10 @@ public class Container : MonoBehaviour
     {
         cb = GetComponent<Collider2D>();
 
-        GameObject display = GameObject.Find(gameObject.name +"/Display");
+        /*GameObject display = GameObject.Find(gameObject.name +"/Display");*/
+        GameObject display = transform.GetChild(0).gameObject;
         displaySprite = display.GetComponent<SpriteRenderer>();
-
-        switch (ingrediantID)
-        {
-            case 0:
-                break;
-            case 1:
-                displaySprite.sprite = images[ingrediantID];
-                break;
-        }
+        displaySprite.sprite = images[ingrediantID];
     }
     public void Grab(GameObject player)
     {
