@@ -29,14 +29,6 @@ public class Player : MonoBehaviour
         {
             movement = Vector2.zero;
         }
-        Debug.Log(movement);
-        if (movement.x > 0)
-        {
-            transform.localScale = Vector3.one * -1;
-        } else
-        {
-            transform.localScale = Vector3.one;
-        }
         // move only of the x axis
         rb.MovePosition(rb.position + movement.normalized * Vector2.left * -speed * Time.deltaTime);
     } 
@@ -47,8 +39,9 @@ public class Player : MonoBehaviour
         {
             //get point clicked
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-
+        } else if (Input.GetMouseButtonDown(1))
+        {
+            SendMessage("Grab");
         }
     }
 }
