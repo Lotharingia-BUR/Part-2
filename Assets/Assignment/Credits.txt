@@ -1,4 +1,4 @@
-Knight Sprites and Animations:
+Knight Sprites, Animations, & sliding bar:
 From Week 5 In-Class Assesment
 
 Water Sprite:
