@@ -8,17 +8,47 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Animator am;
 
+    //vector 2's
+    Vector2 targetPosition;
+    Vector2 movement;
     //public variables
     public float speed = 1;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        am = rb.GetComponent<Animator>();
     }
 
-    
-    void Update()
+    void FixedUpdate()
     {
         
+        movement = targetPosition - (Vector2)transform.position;
+
+        if (movement.magnitude < 0.2)
+        {
+            movement = Vector2.zero;
+        }
+        Debug.Log(movement);
+        if (movement.x > 0)
+        {
+            transform.localScale = Vector3.one * -1;
+        } else
+        {
+            transform.localScale = Vector3.one;
+        }
+        // move only of the x axis
+        rb.MovePosition(rb.position + movement.normalized * Vector2.left * -speed * Time.deltaTime);
+    } 
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //get point clicked
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+
+        }
     }
 }
