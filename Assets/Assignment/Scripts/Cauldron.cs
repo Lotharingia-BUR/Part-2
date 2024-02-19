@@ -6,14 +6,26 @@ public class Cauldron : MonoBehaviour
 {
     Collider2D cb;
     int potionID;
-    int desiredPotionID = 2121;
+    /*int desiredPotionID = 2121;*/
+    public List<int> desiredPotionID;
     public GameObject display;
 
     private void Start()
     {
         cb = GetComponent<Collider2D>();
-        display.SendMessage("ShowList", desiredPotionID);
 
+        //create list
+        SendMessage("createList");
+    }
+
+    public void createList()
+    {
+        //display randomized potion;
+        for (int i = 0; i < 4; i++)
+        {
+            desiredPotionID[i] = Random.Range(1, 3);
+        }
+        display.SendMessage("ShowList", desiredPotionID);
     }
 
     public void Grab(GameObject player)
@@ -22,11 +34,13 @@ public class Cauldron : MonoBehaviour
         {
             player.SendMessage("Deposit", gameObject);
         }
+
     }
 
     public void addIngrediant(int ID)
     {
-        potionID = potionID * 10 + ID;
+        
+        /*potionID = potionID * 10 + ID;
 
         if (potionID > 999)
         {
@@ -37,6 +51,6 @@ public class Cauldron : MonoBehaviour
             {
                 Debug.Log("you made an error" + potionID);
             }
-        } 
+        } */
     }
 }

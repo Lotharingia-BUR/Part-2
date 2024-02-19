@@ -2171,6 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6d572eddee82d489c93d561b4d6d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desiredPotionID: 00000000000000000000000000000000
   display: {fileID: 717943790}
 --- !u!1 &1937056617
 GameObject:

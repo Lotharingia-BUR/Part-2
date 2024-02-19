@@ -9,15 +9,21 @@ public class Display : MonoBehaviour
     SpriteRenderer display;
     public List<Sprite> sprites;
 
-    public void ShowList(int ID)
+    public void ShowList(List<int> ID)
     {
-        string potionID = ID.ToString();
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < 4; i++)
         {
+            int id = ID[i];
             GameObject child = transform.GetChild(i).gameObject;
             display = child.GetComponent<SpriteRenderer>();
-            // -48 due to int turning into a char value
-            display.sprite = sprites[(int)potionID[i] - 48];
+            display.sprite = sprites[(int)ID[i]];
+
+            /*for (int i = 0; i < ID.Capacity; i++)
+            {
+                GameObject child = transform.GetChild(i).gameObject;
+                display = child.GetComponent<SpriteRenderer>();
+                display.sprite = sprites[ID[i]];
+            }*/
         }
     }
 }
