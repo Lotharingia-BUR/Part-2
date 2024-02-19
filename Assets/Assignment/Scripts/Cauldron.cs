@@ -20,7 +20,6 @@ public class Cauldron : MonoBehaviour
     {
         if (cb.IsTouching(player.GetComponent<Collider2D>()))
         {
-            Debug.Log("Deposit");
             player.SendMessage("Deposit", gameObject);
         }
     }
@@ -28,7 +27,6 @@ public class Cauldron : MonoBehaviour
     public void addIngrediant(int ID)
     {
         potionID = potionID * 10 + ID;
-        Debug.Log(potionID);
 
         if (potionID > 999)
         {
