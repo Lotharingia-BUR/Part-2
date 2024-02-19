@@ -67,8 +67,9 @@ public class Player : MonoBehaviour
         
     }
 
-    public void deposit()
+    public void Deposit(GameObject cauldron)
     {
+        cauldron.SendMessage("addIngrediant", objHeld);
         objHeld = 0;
         handObj.sprite = images[0];
     }
