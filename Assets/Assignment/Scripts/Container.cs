@@ -23,7 +23,6 @@ public class Container : MonoBehaviour
     {
         if (cb.IsTouching(player.GetComponent<Collider2D>()))
         {
-            Debug.Log("selected" + ingrediantID);
             player.SendMessage("Grabbed", ingrediantID);
         }
     }

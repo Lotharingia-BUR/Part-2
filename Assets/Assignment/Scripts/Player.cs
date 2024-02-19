@@ -88,7 +88,6 @@ public class Player : MonoBehaviour
             cauldron.SendMessage("addIngrediant", objHeld);
             slider.SendMessage("addIngrediant");
             am.SetTrigger("deposit");
-            Debug.Log(objHeld);
             objHeld = 0;
             handObj.sprite = images[0];
         }
