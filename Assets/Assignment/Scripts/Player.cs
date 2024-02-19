@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     //public variables
     public float speed = 1;
+    float objHeld = 0;
 
     void Start()
     {
@@ -58,6 +59,17 @@ public class Player : MonoBehaviour
 
     public void Grabbed(int ID)
     {
-        handObj.sprite = images[ID];
+        if (objHeld == 0)
+        {
+            objHeld = ID;
+            handObj.sprite = images[ID];
+        }
+        
+    }
+
+    public void deposit()
+    {
+        objHeld = 0;
+        handObj.sprite = images[0];
     }
 }
