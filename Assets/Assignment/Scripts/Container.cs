@@ -25,9 +25,6 @@ public class Container : MonoBehaviour
         {
             Debug.Log("selected" + ingrediantID);
             player.SendMessage("Grabbed", ingrediantID);
-        } else
-        {
-            Debug.Log("blank");
         }
     }
 }

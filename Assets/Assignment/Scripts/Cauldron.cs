@@ -11,17 +11,6 @@ public class Cauldron : MonoBehaviour
     private void Start()
     {
         cb = GetComponent<Collider2D>();
-
-        if (potionID > 999)
-        {
-            if (potionID == desiredPotionID)
-            {
-                Debug.Log("win");
-            } else
-            {
-                Debug.Log("you made an error" + potionID);
-            }
-        } 
     }
 
     public void Grab(GameObject player)
@@ -36,5 +25,17 @@ public class Cauldron : MonoBehaviour
     public void addIngrediant(int ID)
     {
         potionID = potionID * 10 + ID;
+        Debug.Log(potionID);
+
+        if (potionID > 999)
+        {
+            if (potionID == desiredPotionID)
+            {
+                Debug.Log("win");
+            } else
+            {
+                Debug.Log("you made an error" + potionID);
+            }
+        } 
     }
 }
