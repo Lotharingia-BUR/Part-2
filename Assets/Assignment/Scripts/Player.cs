@@ -75,6 +75,8 @@ public class Player : MonoBehaviour
         {
             objHeld = ID;
             handObj.sprite = images[ID];
+
+            am.SetTrigger("grabbing");
         }
         
     }
