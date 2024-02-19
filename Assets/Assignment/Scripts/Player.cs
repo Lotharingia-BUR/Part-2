@@ -43,7 +43,16 @@ public class Player : MonoBehaviour
         {
             movement = Vector2.zero;
         }
+
         
+        if (movement.x > 0)
+        {
+            transform.localScale = Vector3.one * -1;
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
         // move only of the x axis
         rb.MovePosition(rb.position + movement.normalized * Vector2.left * -speed * Time.deltaTime);
         am.SetFloat("moving", (movement * Vector2.left).magnitude);
