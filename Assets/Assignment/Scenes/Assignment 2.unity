@@ -4277,6 +4277,48 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 458d1382236d8de4780298214fc48b1d, type: 3}
   - {fileID: 21300000, guid: 31507cc1e41ac634eb85966c2704e3d4, type: 3}
   slider: {fileID: 795568716}
+  climbing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6721802
+      inSlope: 0.6567106
+      outSlope: 0.6567106
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.19032007
+      value: 0.7971654
+      inSlope: 1.197743
+      outSlope: 1.197743
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2364399
+    - serializedVersion: 3
+      time: 0.5901117
+      value: 0.9425519
+      inSlope: 0.035617415
+      outSlope: 0.035617415
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06847746
+      outWeight: 0.9816085
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.14015546
+      outSlope: 0.14015546
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   speed: 8
 --- !u!61 &4824038944873183732
 BoxCollider2D:

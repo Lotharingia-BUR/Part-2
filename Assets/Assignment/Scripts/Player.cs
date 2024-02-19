@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public GameObject hand;
     public List<Sprite> images;
     public GameObject slider;
+    public AnimationCurve climbing;
 
     //initiate components
     Rigidbody2D rb;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     //public variables
     public float speed = 1;
     float objHeld = 0;
+    float timerValue = 1;
 
     void Start()
     {
@@ -69,6 +71,12 @@ public class Player : MonoBehaviour
         {
             ingrediants.BroadcastMessage("Grab", gameObject);
         }
+
+        if (timerValue < 1)
+        {
+            timerValue += 0.5f * Time.deltaTime;
+            transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, climbing.Evaluate(timerValue));
+        }
     }
 
     public void Grabbed(int ID)
@@ -97,9 +105,11 @@ public class Player : MonoBehaviour
 
     public void Climb()
     {
+        timerValue = 0;
         targetPosition = transform.position;
         if(transform.position.y <= -4.3)
         {
+            
             transform.position += new Vector3 (0, 4.2f, 0);
         } else
         {

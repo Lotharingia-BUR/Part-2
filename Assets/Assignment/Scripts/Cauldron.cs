@@ -27,6 +27,7 @@ public class Cauldron : MonoBehaviour
         {
             desiredPotionID[i] = Random.Range(1, 5);
         }
+        
         display.SendMessage("ShowList", desiredPotionID);
     }
 
@@ -50,6 +51,7 @@ public class Cauldron : MonoBehaviour
             {
                 //score once
                 SendMessage("createList");
+                num = 0;
             }
         } else
         {
