@@ -39,13 +39,14 @@ public class Player : MonoBehaviour
     {
         
         movement = targetPosition - (Vector2)transform.position;
-
-        if (movement.magnitude < 0.001)
+        if (movement.magnitude < 0.1)
         {
             movement = Vector2.zero;
         }
+        
         // move only of the x axis
         rb.MovePosition(rb.position + movement.normalized * Vector2.left * -speed * Time.deltaTime);
+        am.SetFloat("moving", (movement * Vector2.left).magnitude);
     } 
 
     void Update()
