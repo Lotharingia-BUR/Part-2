@@ -43,11 +43,9 @@ public class Player : MonoBehaviour
         {
             movement = Vector2.zero;
         }
-
-        
         if (movement.x > 0)
         {
-            transform.localScale = Vector3.one * -1;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
