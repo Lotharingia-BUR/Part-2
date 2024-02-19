@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         
         movement = targetPosition - (Vector2)transform.position;
 
-        if (movement.magnitude < 0.2)
+        if (movement.magnitude < 0.001)
         {
             movement = Vector2.zero;
         }
