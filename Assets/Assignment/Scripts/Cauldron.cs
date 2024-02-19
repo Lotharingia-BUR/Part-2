@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cauldron : MonoBehaviour
 {
@@ -39,7 +40,19 @@ public class Cauldron : MonoBehaviour
 
     public void addIngrediant(int ID)
     {
-        
+
+        if (desiredPotionID.Contains(ID))
+        {
+            desiredPotionID[desiredPotionID.IndexOf(ID)] = 0;
+        } else
+        {
+            //game over
+            SceneManager.LoadScene(2);
+        }
+        /*for(int i = 0; i < desiredPotionID.Capacity; i++)
+        {
+            Debug.Log(desiredPotionID[i]);
+        }*/
         /*potionID = potionID * 10 + ID;
 
         if (potionID > 999)
