@@ -5,8 +5,8 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     Collider2D cb;
-    float potionID;
-    float desiredPotionID;
+    int potionID;
+    int desiredPotionID = 2222;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Cauldron : MonoBehaviour
                 Debug.Log("win");
             } else
             {
-                Debug.Log("you made an error");
+                Debug.Log("you made an error" + potionID);
             }
         } 
     }
@@ -29,7 +29,7 @@ public class Cauldron : MonoBehaviour
         if (cb.IsTouching(player.GetComponent<Collider2D>()))
         {
             Debug.Log("Deposit");
-            player.SendMessage("deposit", gameObject);
+            player.SendMessage("Deposit", gameObject);
         }
     }
 
