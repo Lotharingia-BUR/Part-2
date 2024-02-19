@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
     public void Grabbed(int ID)
     {
-        if (objHeld == 0)
+        if (objHeld == 0 || ID == 0)
         {
             objHeld = ID;
             handObj.sprite = images[ID];
@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
 
     public void Climb()
     {
+        targetPosition = transform.position;
         if(transform.position.y <= -4.3)
         {
             transform.position += new Vector3 (0, 4.2f, 0);

@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public Text timerValue;
     int minutes;
     int seconds;
+    string sec;
 
     private void Start()
     {
@@ -21,7 +22,15 @@ public class Timer : MonoBehaviour
         timer -= Time.deltaTime;
         minutes = (int) timer / 60;
         seconds = (int) timer - (60 * minutes);
-        timerValue.text = "0" + minutes.ToString() + ":" + seconds.ToString();
+        if (seconds < 10)
+        {
+            sec = "0" + seconds.ToString();
+        } else
+        {
+            sec = seconds.ToString();
+        }
+        
+        timerValue.text = "0" + minutes.ToString() + ":" + sec;
 
         if (timer < 0)
         {

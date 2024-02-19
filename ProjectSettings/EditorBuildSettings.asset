@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Week 4/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Assignment/Scenes/Title Screen.unity
     guid: 6108d41b1bba13e449e1c38d58214e8f
@@ -17,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assignment/Scenes/Game Over.unity
     guid: c89a5b8c81f3f47498df7dcda938d49c
-  - enabled: 1
-    path: Assets/Assignment/Scenes/Win.unity
-    guid: 16e9a35a91005e84da7e09712b5f87a3
   m_configObjects: {}
