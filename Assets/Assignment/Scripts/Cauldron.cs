@@ -6,7 +6,7 @@ public class Cauldron : MonoBehaviour
 {
     Collider2D cb;
     int potionID;
-    public int desiredPotionID = 2222;
+    int desiredPotionID = 2121;
     public GameObject display;
 
     private void Start()

@@ -16,10 +16,8 @@ public class Display : MonoBehaviour
         {
             GameObject child = transform.GetChild(i).gameObject;
             display = child.GetComponent<SpriteRenderer>();
-            Debug.Log(potionID[i]);
-            // -48 char value
+            // -48 due to int turning into a char value
             display.sprite = sprites[(int)potionID[i] - 48];
-            /*sprites[potionID[i]] = transform.GetChild(i).gameObject..sprite; */
         }
     }
 }
