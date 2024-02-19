@@ -10,6 +10,7 @@ public class Cauldron : MonoBehaviour
     /*int desiredPotionID = 2121;*/
     public List<int> desiredPotionID;
     public GameObject display;
+    int num = 0;
 
     private void Start()
     {
@@ -44,26 +45,16 @@ public class Cauldron : MonoBehaviour
         if (desiredPotionID.Contains(ID))
         {
             desiredPotionID[desiredPotionID.IndexOf(ID)] = 0;
+            num++;
+            if(num == 4)
+            {
+                //win
+                SceneManager.LoadScene(3);
+            }
         } else
         {
             //game over
             SceneManager.LoadScene(2);
         }
-        /*for(int i = 0; i < desiredPotionID.Capacity; i++)
-        {
-            Debug.Log(desiredPotionID[i]);
-        }*/
-        /*potionID = potionID * 10 + ID;
-
-        if (potionID > 999)
-        {
-            if (potionID == desiredPotionID)
-            {
-                Debug.Log("win");
-            } else
-            {
-                Debug.Log("you made an error" + potionID);
-            }
-        } */
     }
 }
