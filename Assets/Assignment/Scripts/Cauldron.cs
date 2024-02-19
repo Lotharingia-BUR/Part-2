@@ -25,7 +25,7 @@ public class Cauldron : MonoBehaviour
         //display randomized potion;
         for (int i = 0; i < 4; i++)
         {
-            desiredPotionID[i] = Random.Range(1, 3);
+            desiredPotionID[i] = Random.Range(1, 5);
         }
         display.SendMessage("ShowList", desiredPotionID);
     }

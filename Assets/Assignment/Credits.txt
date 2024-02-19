@@ -1,5 +1,8 @@
 Knight Sprites, Animations, & sliding bar:
-From Week 5 In-Class Assesment
+~From Week 5 In-Class Assesment~
+Animations from Week 5 were used as base animations and were altred and renamed to fit the new motions.
+Knight sprite set was used from Week 5 but diffrent sprites were used to give the character a diffrent appearence fitting of the theme
+Sliding bar was used from Week5, but the colour is changed and so is the code.
 
 Water Sprite:
 https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreazilla.com%2Fnodes%2F3162977-water-clipart&psig=AOvVaw1FH_39cwnutDNSzo-qQ1AD&ust=1708370908714000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNiKhdvPtYQDFQAAAAAdAAAAABAE 
@@ -12,3 +15,14 @@ https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreazilla.com%2Fnodes%2F70318-
 
 Cauldron:
 https://www.google.com/url?sa=i&url=https%3A%2F%2Fgallery.yopriceville.com%2FFree-Clipart-Pictures%2FHalloween-PNG-Pictures%2FWitch_Cauldron_PNG_Clipart&psig=AOvVaw1MLlfVHYohRNAeanFNAm9I&ust=1708388017725000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKCImLmPtoQDFQAAAAAdAAAAABAk
+
+Fire Sprite:
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreazilla.com%2Fnodes%2F3155093-fire-clipart&psig=AOvVaw3RQCdXhoPX7wNasBh7Otwb&ust=1708461029220000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPjz6refuIQDFQAAAAAdAAAAABAE
+
+Slime Sprite:
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreazilla.com%2Fnodes%2F1795614-slime-clipart&psig=AOvVaw3S-37YkjLoX6xSgsINjBzW&ust=1708461347504000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJDixs-guIQDFQAAAAAdAAAAABAW
+
+
+
+
+
