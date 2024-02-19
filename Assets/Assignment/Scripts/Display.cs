@@ -17,13 +17,6 @@ public class Display : MonoBehaviour
             GameObject child = transform.GetChild(i).gameObject;
             display = child.GetComponent<SpriteRenderer>();
             display.sprite = sprites[(int)ID[i]];
-
-            /*for (int i = 0; i < ID.Capacity; i++)
-            {
-                GameObject child = transform.GetChild(i).gameObject;
-                display = child.GetComponent<SpriteRenderer>();
-                display.sprite = sprites[ID[i]];
-            }*/
         }
     }
 }

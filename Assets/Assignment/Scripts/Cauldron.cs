@@ -48,8 +48,8 @@ public class Cauldron : MonoBehaviour
             num++;
             if(num == 4)
             {
-                //win
-                SceneManager.LoadScene(3);
+                //score once
+                SendMessage("createList");
             }
         } else
         {

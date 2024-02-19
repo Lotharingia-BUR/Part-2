@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("score", 0);
         rb = GetComponent<Rigidbody2D>();
         cb = GetComponent<Collider2D>();
         am = rb.GetComponent<Animator>();
@@ -91,6 +92,17 @@ public class Player : MonoBehaviour
             am.SetTrigger("deposit");
             objHeld = 0;
             handObj.sprite = images[0];
+        }
+    }
+
+    public void Climb()
+    {
+        if(transform.position.y <= -4.3)
+        {
+            transform.position += new Vector3 (0, 4.2f, 0);
+        } else
+        {
+            transform.position -= new Vector3(0, 4.2f, 0);
         }
     }
 }
