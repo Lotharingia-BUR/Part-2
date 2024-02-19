@@ -6,11 +6,14 @@ public class Cauldron : MonoBehaviour
 {
     Collider2D cb;
     int potionID;
-    int desiredPotionID = 2222;
+    public int desiredPotionID = 2222;
+    public GameObject display;
 
     private void Start()
     {
         cb = GetComponent<Collider2D>();
+        display.SendMessage("ShowList", desiredPotionID);
+
     }
 
     public void Grab(GameObject player)
