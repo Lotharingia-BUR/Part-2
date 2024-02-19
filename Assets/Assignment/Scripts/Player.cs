@@ -83,10 +83,14 @@ public class Player : MonoBehaviour
 
     public void Deposit(GameObject cauldron)
     {
-        cauldron.SendMessage("addIngrediant", objHeld);
-        slider.SendMessage("addIngrediant");
-        Debug.Log(objHeld);
-        objHeld = 0;
-        handObj.sprite = images[0];
+        if (objHeld != 0)
+        {
+            cauldron.SendMessage("addIngrediant", objHeld);
+            slider.SendMessage("addIngrediant");
+            am.SetTrigger("deposit");
+            Debug.Log(objHeld);
+            objHeld = 0;
+            handObj.sprite = images[0];
+        }
     }
 }
