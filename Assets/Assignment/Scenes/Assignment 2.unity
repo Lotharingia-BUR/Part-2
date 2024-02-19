@@ -485,6 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1356789096}
   - {fileID: 1840345927}
   - {fileID: 1091992068}
   - {fileID: 163269628}
@@ -818,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795568717}
   - component: {fileID: 795568718}
+  - component: {fileID: 795568719}
   m_Layer: 5
   m_Name: Progress Bar
   m_TagString: Untagged
@@ -893,10 +895,23 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 4
   m_WholeNumbers: 1
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &795568719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795568716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17516807ec3b2554a88465d3b64b68e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 795568718}
 --- !u!1 &876836343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1224,7 @@ RectTransform:
   - {fileID: 1401192075}
   - {fileID: 1575593669}
   - {fileID: 795568717}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 295461387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2361,6 +2376,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 21300000, guid: 962b34935d3e6934b86c0d4f222550d3, type: 3}
   - {fileID: 21300000, guid: 73d1b8ec961393946b050c0d3e6e85ed, type: 3}
+  slider: {fileID: 795568718}
   speed: 5
 --- !u!61 &4824038944873183732
 BoxCollider2D:
@@ -2590,5 +2606,4 @@ SceneRoots:
   - {fileID: 4824038944873183730}
   - {fileID: 1282851798}
   - {fileID: 295461387}
-  - {fileID: 1356789096}
   - {fileID: 49496930}

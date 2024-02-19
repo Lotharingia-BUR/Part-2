@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class Player : MonoBehaviour
     public GameObject ingrediants;
     public GameObject hand;
     public List<Sprite> images;
+    public GameObject slider;
 
     //initiate components
     Rigidbody2D rb;
     Collider2D cb;
     Animator am;
     SpriteRenderer handObj;
+
+
 
     //vector 2's
     Vector2 targetPosition;
@@ -70,6 +74,7 @@ public class Player : MonoBehaviour
     public void Deposit(GameObject cauldron)
     {
         cauldron.SendMessage("addIngrediant", objHeld);
+        slider.SendMessage("addIngrediant");
         Debug.Log(objHeld);
         objHeld = 0;
         handObj.sprite = images[0];
