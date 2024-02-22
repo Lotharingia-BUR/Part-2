@@ -6,10 +6,12 @@ public class Teammate : MonoBehaviour
 {
 
     SpriteRenderer sr;
-
+    Rigidbody2D rb;
+    public float speed = 1000;
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         Selected(false);
     }
 
@@ -25,8 +27,13 @@ public class Teammate : MonoBehaviour
         }
     }
 
+    public void Kick(Vector2 force)
+    {
+        rb.AddForce(force * speed);
+    }
+
     private void OnMouseDown()
     {
-        Selected(true);
+        Controller.SetSelectedPlayer(this);
     }
 }
