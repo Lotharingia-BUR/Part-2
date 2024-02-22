@@ -10,16 +10,10 @@ public class Teammate : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        Selected(false);
     }
 
-    void Update()
-    {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            Selected(false);
-        }*/
-    }
-            public void Selected( bool isSelected)
+    public void Selected( bool isSelected)
     {
         if (isSelected)
         {
