@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Controller : MonoBehaviour
 {
     public static Teammate SelectedPlayer { get; private set; }
+    public static int score;
     float force = 0;
     Vector2 direction;
     public Slider chargeSlider;
